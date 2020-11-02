@@ -52,7 +52,7 @@ https://dvmn.org/modules/chat-bots/lesson/devman-bot/
 
 1. Клонировать репозиторий:
 ```
-git clone https://github.com/ArkJzzz/support_bot.git
+git clone https://github.com/Arrisio/dvmn-chatbot-part2.git
 ```
 
 2. Создать файл ```.env``` и поместить в него токены Telegram и ВКонтакте:

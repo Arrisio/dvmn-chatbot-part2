@@ -8,9 +8,9 @@ from loguru import logger
 
 def get_loguru_config(
     use_default_prod_configuration: bool = strtobool(
-        os.getenv("LOGGING_DEFAULT_PROD_CONF", "TRUE")
+        os.getenv("LOG_DEFAULT_PROD_CONF", "TRUE")
     ),
-    level: Union[None, str, int] = os.getenv("LOGGING_LEVEL", "INFO"),
+    level: Union[None, str, int] = os.getenv("LOG_LEVEL", "INFO"),
 ) -> dict:
     """
     Возвращает словарь с к конфигурацией логера Loguru, в зависимости от среды эксплуатации и доп. параметров.

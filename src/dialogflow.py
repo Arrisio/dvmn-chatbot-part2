@@ -1,4 +1,7 @@
+from typing import Union, NoReturn
+
 import google.auth
+from loguru import logger
 
 
 def detect_intent_texts(
@@ -23,5 +26,18 @@ def detect_intent_texts(
         return session_client.detect_intent(session=session, query_input=query_input)
 
 
-def get_response_text(income_text: str) -> str:
-    return detect_intent_texts([income_text]).query_result.fulfillment_text
+def get_response_text(
+    income_text: str, session_id=0, skip_if_not_understand: bool = False
+) -> Union[str, NoReturn]:
+    response = detect_intent_texts([income_text], session_id=session_id)
+    logger.debug(
+        "receive deialogflow intend",
+        extra={
+            "is_fallback": response.query_result.intent.is_fallback,
+            "fulfillment_text": response.query_result.fulfillment_text,
+        },
+    )
+    if skip_if_not_understand and response.query_result.intent.is_fallback:
+        return
+
+    return response.query_result.fulfillment_text

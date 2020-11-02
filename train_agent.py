@@ -48,7 +48,7 @@ def main():
     parser.add_argument(
         "-f",
         "--filename",
-        default="questions.json",
+        default="resources/questions.json",
         help="введите <имя_файла.json> с тренировочными фразами и ответами",
     )
     args = parser.parse_args()

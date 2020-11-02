@@ -19,7 +19,7 @@ https://dvmn.org/modules/chat-bots/lesson/devman-bot/
     Обучите нейросеть DialogFlow тренировочными фразами и ответами из файла ```<filename.json>``` с помощью ```train_agent.py```:
 
     ```
-    python3 train_agent.py -fn <filename.json>
+    python3 train_agent.py -f <filename.json>
     ```
 
     ![](train_agent.png)

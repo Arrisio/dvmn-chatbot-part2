@@ -2,6 +2,7 @@ import argparse
 
 from loguru import logger
 
+from src.vk import run_vk_bot
 from src.telegram import run_tg_bot
 from src.utils.project_logging import get_loguru_config
 
@@ -10,7 +11,7 @@ def get_cli_args():
     parser = argparse.ArgumentParser(description="simple Telegram and VK bots")
     parser.add_argument(
         "bot",
-        default="tg",
+        default="vk",
         choices=["tg", "vk"],
         help="which bot wil be started",
         nargs="?",
@@ -27,4 +28,4 @@ if __name__ == "__main__":
     if bot == "tg":
         run_tg_bot()
     elif bot == "vk":
-        raise NotImplementedError
+        run_vk_bot()

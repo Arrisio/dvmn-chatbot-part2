@@ -1,6 +1,7 @@
-from loguru import logger
 import os
+
 from aiogram import Dispatcher
+from loguru import logger
 
 
 async def on_startup_notify(dp: Dispatcher):

@@ -5,7 +5,7 @@ from src.telegram.handlers import dp
 
 
 async def on_startup(dp):
-    from src.telegram.utils.notify_admins import on_startup_notify
+    from src.telegram.utils import on_startup_notify
 
     await on_startup_notify(dp)
 

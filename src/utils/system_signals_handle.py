@@ -12,7 +12,7 @@ def _sigterm_handler(_signo, _stack_frame):
 
 def register_system_handlers():
     """
-        Register default system handlers is necessary to gracefully stopping program in Docker
+        Register default system signals handlers is necessary to gracefully stopping program in Docker
     :return:
     """
     signal.signal(signal.SIGTERM, _sigterm_handler)

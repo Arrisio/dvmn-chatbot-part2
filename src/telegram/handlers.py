@@ -3,12 +3,9 @@ import logging
 from aiogram import types
 from aiogram.dispatcher.filters import CommandStart
 
-from .users import dp
 
-__all__ = ["dp"]
-
-from ..loader import dp
-from ...dialogflow import get_response_text
+from . loader import dp
+from .. dialogflow import get_response_text
 
 
 @dp.message_handler(CommandStart())

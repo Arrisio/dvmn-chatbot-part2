@@ -11,7 +11,7 @@ def get_cli_args():
     parser = argparse.ArgumentParser(description="simple Telegram and VK bots")
     parser.add_argument(
         "bot",
-        default="vk",
+        default="tg",
         choices=["tg", "vk"],
         help="which bot wil be started",
         nargs="?",

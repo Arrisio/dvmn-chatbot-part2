@@ -1,5 +1,6 @@
 from typing import Union, NoReturn
 
+import dialogflow_v2 as dialogflow
 import google.auth
 from loguru import logger
 
@@ -11,7 +12,7 @@ def detect_intent_texts(
 
     Using the same `session_id` between requests allows continuation
     of the conversation."""
-    import dialogflow_v2 as dialogflow
+
 
     session_client = dialogflow.SessionsClient()
 

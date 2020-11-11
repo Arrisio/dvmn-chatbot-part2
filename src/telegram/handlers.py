@@ -4,8 +4,8 @@ from aiogram import types
 from aiogram.dispatcher.filters import CommandStart
 
 
-from . loader import dp
-from .. dialogflow import get_response_text
+from .loader import dp
+from ..dialogflow import get_response_text
 
 
 @dp.message_handler(CommandStart())
@@ -17,4 +17,6 @@ async def bot_start(message: types.Message):
 @dp.message_handler()
 async def dialogflow_response(message: types.Message):
     logging.debug("dialogflow_response")
-    await message.answer(get_response_text(message.text))
+    await message.answer(
+        get_response_text(message.text, session_id="tg-" + message.from_user.id)
+    )

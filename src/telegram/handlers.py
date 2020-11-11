@@ -18,5 +18,5 @@ async def bot_start(message: types.Message):
 async def dialogflow_response(message: types.Message):
     logging.debug("dialogflow_response")
     await message.answer(
-        get_response_text(message.text, session_id="tg-" + message.from_user.id)
+        get_response_text(message.text, session_id=f"tg-{message.from_user.id}")
     )

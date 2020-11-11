@@ -10,7 +10,7 @@ from src.dialogflow import get_response_text
 
 def answer_vk_message(event, vk):
     if text := get_response_text(
-        event.text, session_id="vk-" + event.user_id, skip_if_not_understand=True
+        event.text, session_id=f"vk-{event.user_id}", skip_if_not_understand=True
     ):
         vk.messages.send(
             user_id=event.user_id,

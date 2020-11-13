@@ -3,7 +3,7 @@ import argparse
 from loguru import logger
 
 from src.telegram import run_tg_bot
-from src.utils.project_logging import get_loguru_config
+from src.project_logger import get_loguru_config
 from src.vk import main as run_vk_bot
 
 

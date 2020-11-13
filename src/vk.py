@@ -38,7 +38,3 @@ def main():
         logger.info(f"shutting down.. {err}")
 
     logger.info("vk bot stopped")
-
-
-if __name__ == "__main__":
-    main()
